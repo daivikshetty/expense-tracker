@@ -18,7 +18,9 @@ function Expense(props){
             <div>
                   <Card className="expenses">
                         <ExpensesFilter onReceiveData={receivedProp}/>
-                        <ExpensesLists listData={props.expenses} filterYear={fYear}/>
+                        <ul className='expenses-list'>
+                              <ExpensesLists listData={props.expenses} filterYear={fYear}/>
+                        </ul>
                   </Card>
             </div>
       );
