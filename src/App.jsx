@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Expense from './components/Expenses/Expense';
 import NewExpense from './components/NewExpense/NewExpense';
 
 function App() {
-	let expenses = [
+	const allExpenses = [
 		{
 		  id: 'e1',
 		  title: 'Rockets',
@@ -42,15 +42,17 @@ function App() {
 			date: new Date(2023, 2, 2),
 		},
 		{
-			id: 'e7',
+			id: 'e8',
 			title: 'Lenovo Laptop',
 			amount: 5000,
-			date: new Date(2019, 10, 10),
+			date: new Date(2020, 10, 10),
 		}
 	];
 
+	const [expenses, setExpenses] = useState(allExpenses);
+
 	const saveHandler = (expense) => {
-		expenses = [...expenses, expense];
+		setExpenses([expense, ...expenses]);
 	}
 
       return (

@@ -1,11 +1,10 @@
 import './Item.css';
 import ExpenseDate from './ExpenseDate';
 import Card from '../UI/Card';
-import React, { useState } from 'react';
+import React from 'react';
 
 function Item(props){
-      const [title, setTitle] = useState(props.title);
-
+      const title = props.title;
       if(props.year === props.date.getYear() + 1900 || props.year===0){
             return (
                   <Card className="expense-item">

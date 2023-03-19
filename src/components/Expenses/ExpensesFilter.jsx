@@ -7,7 +7,6 @@ const ExpensesFilter = (props) => {
 
     if(count%2!==0){
       let filterYear = event.target.value;
-      // console.log(filterYear);
       props.onReceiveData(filterYear);
     }
   }

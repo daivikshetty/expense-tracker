@@ -5,6 +5,7 @@ function ExpenseForm(props){
       const [titleChange, setTitle] = useState('');
       const [amountChange, setAmount] = useState('');
       const [dateChange, setDate] = useState('');
+      const [id, setId] = useState(9);
 
       const titleChangeHandler = (event) => {
             setTitle(event.target.value);
@@ -20,12 +21,15 @@ function ExpenseForm(props){
 
       const submitHandler = (event) => {
             event.preventDefault();             //doesn't refresh on submit
+            setId(id+1);
 
             const expenseData = {
+                  id : 'e' + id.toString(),
                   title : titleChange,
                   amount : amountChange,
                   date : new Date(dateChange)
             };
+            console.log(expenseData);
             props.onSaveData(expenseData);
             setAmount('');
             setDate('');
@@ -38,8 +42,8 @@ function ExpenseForm(props){
                         <div className='new-expense__control'>
                               <label>Title</label>
                               <input 
-                                    type='text' 
-                                    onChange={titleChangeHandler} 
+                                    type='text'
+                                    onChange={titleChangeHandler}
                                     value={titleChange}
                               />
                         </div>
