@@ -2,9 +2,8 @@ import React from "react";
 import Item from "./Item";
 import './ExpensesLists.css';
 
-
 const ExpensesLists = props => {
-      const filteredList = props.listData.filter((item) => props.filterYear===item.date.getFullYear());
+      const filteredList = props.listData.filter((item) => props.filterYear === item.date.getFullYear());
       if(props.filterYear===0){
             return (
                   <li>
